@@ -1,0 +1,47 @@
+<input type="number" id="int_1" />
+
+<select id="op">
+  <option value="add">+</option>
+  <option value="sub">-</option>
+  <option value="mul">*</option>
+  <option value="div">/</option>
+</select>
+
+<input type="number" id="int_2" />
+
+<button onclick="calculate()">Calculate</button>
+
+<br />
+
+<span>Result: </span>
+<span id="res">NULL</span>
+
+<script>
+  function calculate() {
+    const int_1 = parseInt(document.getElementById('int_1').value),
+      int_2 = parseInt(document.getElementById('int_2').value),
+      op = document.getElementById('op').value;
+
+    let res = 0;
+
+    switch (op) {
+      case 'add':
+        res = int_1 + int_2;
+        break;
+
+      case 'sub':
+        res = int_1 - int_2;
+        break;
+
+      case 'mul':
+        res = int_1 * int_2;
+        break;
+
+      case 'div':
+        res = int_1 / int_2;
+        break;
+    }
+
+    document.getElementById('res').innerText = res;
+  }
+</script>
